@@ -1,0 +1,51 @@
+﻿@model RegisterViewModel
+
+  <form asp-action="Index" asp-controller="Account"  method="post" class="signup-content">
+                    <h2 class="form-title">Customer Registration</h2>
+                    <div asp-validation-summary="All"></div>
+                    <div class="form-group">
+                        <input asp-for="Name" class="form-input" name="name" id="name" placeholder="Your  Name"/>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Email" class="form-input" name="email" id="email" placeholder="Your Email"/>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Password"  type="password" class="form-input" name="password" id="password" placeholder="Password"/>
+                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="ConfirmPassword" type="password" class="form-input" name="ConfirmPassword" id="ConfirmPassword" placeholder="Repeat your password" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="ContactNumber" type="text" class="form-input" name="ContactNumber" id="ContactNumber" placeholder="Your Contact Number"/>
+                        <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="AddressLine1" type="text" class="form-input" name="addressLine1" id="addressLine1" placeholder="Your Address1"/>
+                        <span asp-validation-for="AddressLine1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="AddressLine2" type="text" class="form-input" name="addressLine2" id="addressLine2" placeholder="Your Address2"/>
+                        <span asp-validation-for="AddressLine2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="City" type="text" class="form-input" name="City" id="City" placeholder="Your City"/>
+                        <span asp-validation-for="City" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="State" type="text" class="form-input" name="State" id="State" placeholder="Your State"/>
+                        <span asp-validation-for="State" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Zipcode" type="text" class="form-input" name="Zipcode" id="Zipcode" placeholder="Your ZipCode" />
+                        <span asp-validation-for="Zipcode" class="text-danger"></span>
+                    </div>
+                   
+                    <div class="form-group">
+                        <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                    </div>
+                </form>
