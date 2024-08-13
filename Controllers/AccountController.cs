@@ -2,6 +2,7 @@
 using LoginWithID.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 
 namespace LoginWithID.Controllers
 {
@@ -51,6 +52,14 @@ namespace LoginWithID.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginViewModel)
         {
+
+            SqlConnection sqlConnection = new SqlConnection("server=LAPTOP-BLNTEBH7\\SQLEXPRESS; database=ABCWeltec;Trusted_Connection=True;TrustServerCertificate=true");
+            SqlCommand cmd = sqlConnection.CreateCommand(); 
+            cmd.Connection = sqlConnection;
+            cmd.CommandText = "select * from AspNetUsers";
+
+
+
 
             var result = await _signInManager.PasswordSignInAsync(loginViewModel.Email, loginViewModel.Password, loginViewModel.RememberMe, lockoutOnFailure: false);
 
